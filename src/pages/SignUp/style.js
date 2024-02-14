@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import background from '../../assets/movie.png'
+import styled from "styled-components";
 
 
 export const Container = styled.div`
