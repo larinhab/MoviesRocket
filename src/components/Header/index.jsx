@@ -1,8 +1,8 @@
-import styled from "styled-components";
 import { Container, Profile, Logout, Search } from './styles.js'
 import { RiShutDownLine } from 'react-icons/ri'
 import { Input } from "../Input/index.jsx";
 import { FiSearch } from "react-icons/fi";
+import styled from "styled-components";
 
 export function Header(){
     return(

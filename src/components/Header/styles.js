@@ -14,7 +14,7 @@ export const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0 80px;
+    padding: 0 10rem;
 
 
     > h1 {
