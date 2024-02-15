@@ -5,7 +5,7 @@ export function MovieItem({ isNew, value, onClick, ...rest }) {
   return (
     <Container isNew={isNew}>
       <input type="text" value={value} readOnly={!isNew} {...rest} />
-
+    
       <button
         type="button"
         onClick={onClick}
@@ -13,6 +13,7 @@ export function MovieItem({ isNew, value, onClick, ...rest }) {
       >
         {isNew ? <FiPlus /> : <FiX />}
       </button>
+      
     </Container>
   )
 }
