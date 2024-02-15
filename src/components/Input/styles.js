@@ -5,8 +5,10 @@ export const Container = styled.div`
     display: flex;
     align-items:center;
     justify-content: center;
-
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    
+    margin-bottom: .3rem;
+    
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
 
     border-radius: 1rem;
@@ -16,9 +18,9 @@ export const Container = styled.div`
         height: 3rem;
 
         padding: 1rem;
-        
+
         color: ${({ theme }) => theme.COLORS.WHITE};
-        background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
         border: 0;
         border-radius: 1rem;

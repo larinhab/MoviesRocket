@@ -12,7 +12,9 @@ export const Container = styled.span`
 
     cursor: pointer;
     letter-spacing: 1px;
-
+    
+    font-weight: 400;
+    
     :hover {
         background-color: ${({theme }) => theme.COLORS.GRAY_300};
     }

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  width: calc(100% - 0.8rem);
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
+  width: 100%;
+  
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   border: none;
   border-radius: 1.6rem;
@@ -10,6 +11,17 @@ export const Container = styled.button`
   padding: 3.2rem;
   margin-bottom: 2.4rem;
   margin-right: 0.8rem;
+
+     ::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    ::-webkit-scrollbar-track{
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+        border-radius: 10px;
+        margin-left: .5rem;
+    }  
+
 
   > h1 {
     flex: 1;
@@ -20,20 +32,19 @@ export const Container = styled.button`
   }
 
   > p {
+    font-family: 'Roboto';
     text-align: justify;
-    color: ${({ theme }) => theme.COLORS.GRAY_300};
+    color: ${({ theme }) => theme.COLORS.WHITE};
 
     margin: 1.5rem 0;
     max-height: 5.3rem;
+    padding-right: .8rem;
 
-    line-height: 1.9rem;
+    line-height: 1.5rem;
 
-    overflow: hidden;
+    overflow-y: scroll;
     text-overflow: ellipsis;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
   }
 
   > footer {

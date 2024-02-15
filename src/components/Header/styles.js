@@ -31,7 +31,7 @@ export const Search = styled.div`
 
     width: 300%;
     padding: 1rem;
-    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.WHITE};
 `
 
