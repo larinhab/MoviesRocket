@@ -27,6 +27,7 @@ export const Container = styled.div`
 
         h1 {
             font-size: 2.5rem;
+            font-weight: 400;
         }
 
         .subtitle {

@@ -1,23 +1,30 @@
-import { FiPlus, FiSearch} from 'react-icons/fi'
-
-import { Container, NewNote } from './styles'
+import { NewNote } from '../../components/NewNote'
 import { Header } from '../../components/Header'
+import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
+import { Container, NewMovie } from './styles'
+import { FiPlus } from 'react-icons/fi'
 
 export function Home(){
     return(
         <Container>
             <Header></Header>
             
-                <h1>
-                    Meus Filmes
-                </h1>
+            <main>
+            <header>
+                <h1>Meus Filmes</h1>
 
-            <NewNote to="/newmovienote">
-                <FiPlus></FiPlus>
-                Adicionar FIlme
-            </NewNote>
+            <NewMovie to="/newmovienote">
+                   <FiPlus></FiPlus>
+                   Adicionar Filme
+            </NewMovie>
+            </header>
+
+            <NewNote></NewNote>
+            <NewNote></NewNote>
+            <NewNote></NewNote>
             
+            </main>
         </Container>
     )
 }
