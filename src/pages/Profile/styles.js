@@ -3,11 +3,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
+    height: 100vh;
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
     >header {
         width: 100%;
         height: 144px;
-        background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
         display: flex;
         align-items: center;
@@ -28,6 +30,7 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
+
     max-width: 340px;
     margin: 30px auto 0;
 
@@ -74,6 +77,6 @@ export const Avatar = styled.div`
     svg {
         width: 20px;
         height: 20px;
-        color: ${({ theme }) => theme.COLORS.PINK};
+        color: ${({ theme }) => theme.COLORS.WHITE};
     }
 `

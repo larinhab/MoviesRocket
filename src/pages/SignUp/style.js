@@ -1,4 +1,5 @@
 import background from '../../assets/movie.png'
+import bg from '../../assets/bg.jpg'
 import styled from "styled-components";
 
 
@@ -49,7 +50,7 @@ export const Form = styled.form`
 
 export const Background = styled.div`
     flex: 1;
-    background: url( ${background} ) no-repeat center center;
+    background: url( ${bg} ) no-repeat center center;
     background-size: cover;
 
     opacity: 0.8;

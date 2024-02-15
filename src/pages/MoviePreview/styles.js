@@ -5,6 +5,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     margin: 0 auto;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
     > main {
         display: flex;
@@ -49,7 +50,7 @@ export const Container = styled.div`
             }
 
             p {
-                
+                text-overflow: ellipsis;
             }
         }
 
@@ -78,7 +79,7 @@ export const Container = styled.div`
             overflow-x: hidden;
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;
-    
+            padding-right: 1rem;
         }
 }
 

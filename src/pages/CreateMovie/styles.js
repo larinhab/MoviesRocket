@@ -13,6 +13,7 @@ export const Container = styled.div`
         align-self: center;
         flex-direction: column;
 
+        padding-right: 1rem;
         overflow-y: scroll;
     
         h1 {
@@ -37,10 +38,15 @@ export const Container = styled.div`
     }
     
     .tags{
+        display: flex;
+        align-items: center;
+        height: fit-content;
+        padding: 1rem;
+
+        flex: 1;
+
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
         border-radius: .5rem;
-        padding: 1rem;
-        height: fit-content;
     }
 
     footer {
