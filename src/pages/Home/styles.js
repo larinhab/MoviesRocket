@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 export const Container = styled.div`
     width: 100%;
@@ -44,13 +45,13 @@ export const Container = styled.div`
 
 `
 
-export const NewMovie = styled.div`
+export const NewMovie = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
 
     background-color: ${({ theme }) => theme.COLORS.PINK};
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    color: ${({ theme }) => theme.COLORS.WHITE};
 
     height: 56px;
 
@@ -65,7 +66,7 @@ export const NewMovie = styled.div`
     cursor: pointer;
 
     > svg{
-        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+        color: ${({ theme }) => theme.COLORS.WHITE};
         font-size: 1.2rem;
     }
     

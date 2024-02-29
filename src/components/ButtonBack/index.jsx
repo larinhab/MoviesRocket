@@ -3,7 +3,7 @@ import { Container } from "./styles";
 
 export function ButtonBack() {
     return (
-        <Container>
+        <Container to="/">
             <FiArrowLeft></FiArrowLeft>
             <p>Voltar</p>
         </Container>

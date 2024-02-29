@@ -2,6 +2,9 @@ import { FiUser, FiMail, FiLock, FiArrowDownLeft, FiArrowLeft} from 'react-icons
 import { Container, Form, Background } from "./style";
 import { Button } from '../../components/Button'
 import { Input } from "../../components/Input";
+import { Link } from "react-router-dom"
+
+import { api } from '../../service/api'
 
 import { useState } from 'react'
 
@@ -12,7 +15,20 @@ export function SignUp(){
     const [password, setPassword] = useState(""); 
 
     function handleSignUp(){
-        console.log(name, email, password)
+        if(!name || !email || !password){
+            return alert("Todos os campos são obrigatórios")
+        }
+
+        api.post("/users", { name, email, password })
+        .then(() => {
+            alert("Usuário cadastrado com sucesso!")
+        })
+        .catch(error => {
+            if(error.response.data.message){
+            }else{
+                alert("Não foi possível cadastrar")
+            }
+        })
     }
 
     return(
@@ -42,10 +58,10 @@ export function SignUp(){
                 onChange={e => setPassword(e.target.value)}>
                 </Input>
 
-            <Button title="Cadastrar" onClick={handleSignUp()}></Button>
+            <Button title="Cadastrar" onClick={handleSignUp}></Button>
         
-            <a href="#">
-                <FiArrowLeft></FiArrowLeft>Voltar para o login</a>
+            <Link to="/">
+                <FiArrowLeft></FiArrowLeft>Voltar para o login</Link>
             </Form>
             
         </Container>
