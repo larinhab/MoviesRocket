@@ -1,8 +1,8 @@
 import { FiUser, FiMail, FiLock, FiArrowDownLeft, FiArrowLeft} from 'react-icons/fi'
 import { Container, Form, Background } from "./style";
+import { Link, useNavigate } from "react-router-dom"
 import { Button } from '../../components/Button'
 import { Input } from "../../components/Input";
-import { Link } from "react-router-dom"
 
 import { api } from '../../service/api'
 
@@ -14,7 +14,9 @@ export function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(""); 
 
-    function handleSignUp(){
+    const navigate = useNavigate()
+
+function handleSignUp(){
         if(!name || !email || !password){
             return alert("Todos os campos são obrigatórios")
         }
@@ -22,9 +24,12 @@ export function SignUp(){
         api.post("/users", { name, email, password })
         .then(() => {
             alert("Usuário cadastrado com sucesso!")
+            navigate("/")
         })
         .catch(error => {
-            if(error.response.data.message){
+            if(error.message){
+                console.log("b")
+                alert(error.message)
             }else{
                 alert("Não foi possível cadastrar")
             }
