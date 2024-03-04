@@ -1,10 +1,12 @@
 import { Container, Profile, Logout, Search } from './styles.js'
 import { RiShutDownLine } from 'react-icons/ri'
+import { useAuth } from '../../hooks/auth.jsx';
 import { Input } from "../Input/index.jsx";
 import { FiSearch } from "react-icons/fi";
-import styled from "styled-components";
 
 export function Header(){
+    const { signOut } = useAuth()
+
     return(
         <Container>
             <h1>RocketMovies</h1>
@@ -24,7 +26,7 @@ export function Header(){
                 </div>
             </Profile>
 
-            <Logout to="/">
+            <Logout onClick={signOut}>
                 <RiShutDownLine></RiShutDownLine>
             </Logout>
         </Container>
