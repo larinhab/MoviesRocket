@@ -5,10 +5,6 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
-    display: grid;
-    grid-template-areas: 
-    "header"
-    "container";
     justify-content: space-between;
     align-items: center;
     overflow-y: auto;

@@ -20,21 +20,25 @@ export function CreateMovie() {
 
     const [ tags, setTags] = useState([])
     const [ newTag, setNewTag] = useState("")
-
-    const [ movie_note, setStars ] = useState([])
     const [ rating, setRating] = useState("")
     
     async function handleNewMovieNote(){
-        if(!setTitle){
+        if(!movie_title){
             return alert("Você deixou o título vazio!")
         }
 
-        if(!setDescription){
+        if(!movie_description){
             return alert("Você deixou a descrição do filme vazia!")
         }
 
-        if(!setRating, !setStars){
+        if(!rating){
             return alert("Você precisa dar uma nota de 0 à 5")
+        }
+
+        const isRatingValid = rating >= 0 && rating <= 5
+
+        if(!isRatingValid){
+            return alert("A nota deve ser entre 0 e 5")
         }
 
         if(!newTag){
@@ -44,21 +48,12 @@ export function CreateMovie() {
         await api.post("/notes", {
             movie_title,
             movie_description,
-            movie_note,
-            tags// NÃO ESTA PASSANDO NO BACK END, RESOLVER
-        }),
-
-        console.log(movie_note)
-
-        await api.post("/tags", {
-            tags,
-            tag_name,
-            note_id,
-            user_id,
+            rating,
+            tags 
         }),
 
         alert("Nota criada com sucesso", 200)
-        navigate("/")
+        navigate(-1)
     }
 
     function handleAddTags(){
@@ -68,11 +63,6 @@ export function CreateMovie() {
 
     function handleRemoveTag(deleted){
         setTags(prevState => prevState.filter(tag => tag !== deleted))
-    }
-    
-    function handleRating(){
-        setRating(prevState => [...prevState, setStars])    
-        setStars()
     }
 
 
@@ -98,38 +88,37 @@ export function CreateMovie() {
                 type="number" 
                 title="movie_note" 
                 placeholder="Sua nota (de 0 à 5)"
-                minLength="0"
-                maxLength="5"
+                minLength= {0}
+                maxLength= {5}
 
                 value= { rating }
                 onChange={(e) => setRating(e.target.value)}>
                 </Input>
 
                 <Stars
-                rating = { setRating }// AQUI NÃO FUNCIONA SÓ COLOCANDO NUMERO
+                rating = { rating }// AQUI NÃO FUNCIONA SÓ COLOCANDO NUMERO
                 isbigsize
-                onChange = {(e) => setStars(e.taget.value)} 
-                onClick={ handleRating }>
+                onChange = {(e) => setRating(e.taget.value)} 
+                >
                 </Stars>
             
             </div>
 
                 <TextArea 
                 title="movie_description"
-                placeholder="Observações"
+                placeholder="Observações sobre o filme"
                 onChange={(e) => setDescription(e.target.value)}>
                 </TextArea>
 
-            <Section>
-                <h2>Marcadores</h2>
+            <Section title="Marcadores">
                 <div className="tags">
 
         {
             tags.map((tag, index) => (
              <MovieItem
-            key={String(index)}
-            value={tag}
-            onClick={() => handleRemoveTag(tag)}
+                key={String(index)}
+                value={ tag }
+                onClick={() => handleRemoveTag(tag)}
             ></MovieItem>
             ))
         }
@@ -137,7 +126,7 @@ export function CreateMovie() {
             <MovieItem
             isnew
             placeholder="Novo Marcador"
-            value={newTag}
+            value={ newTag }
             onChange={(e) => setNewTag(e.target.value)}
             onClick={ handleAddTags }
             >

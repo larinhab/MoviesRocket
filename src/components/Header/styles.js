@@ -3,9 +3,11 @@ import { Link } from "react-router-dom"
 
 export const Container = styled.header`
     grid-area: header;
-    height: 105px;
+    height: 7rem;
     width: 100%;
 
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
@@ -31,7 +33,7 @@ export const Search = styled.div`
 
     width: 300%;
     padding: 1rem;
-    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_700};
     color: ${({ theme }) => theme.COLORS.WHITE};
 `
 

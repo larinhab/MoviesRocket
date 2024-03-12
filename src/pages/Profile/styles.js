@@ -8,7 +8,7 @@ export const Container = styled.div`
 
     >header {
         width: 100%;
-        height: 144px;
+        height: 7rem;
         background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
         display: flex;

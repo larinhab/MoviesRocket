@@ -1,15 +1,42 @@
-import { NewNote } from '../../components/NewNote'
+import { FiPlus, FiSearch } from 'react-icons/fi'
 import { Header } from '../../components/Header'
-import { Button } from '../../components/Button'
+import { Movie } from '../../components/Movie'
 import { Input } from '../../components/Input'
 import { Container, NewMovie } from './styles'
-import { FiPlus } from 'react-icons/fi'
+import { api } from '../../service/api'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export function Home(){
+    const [ notes, setNotes ] = useState([]) 
+    const [ search, setSearch ] = useState("")
+
+    function handleDetails(id) {
+        navigate(`/preview/${id}`);
+      }
+ 
+    useEffect(() => {
+        async function searchNotes(){
+            const response = await api.get(`/notes?movie_title=${search}`)
+            setNotes(response.data)
+        }
+        searchNotes()
+
+    }, [ search ])
+
+
     return(
         <Container>
-            <Header></Header>
             
+            <Header>
+                <Input 
+                placeholder="Pesquisar pelo título" 
+                icon={ FiSearch }
+                onChange= { (e) => setSearch(e.target.value) }
+                > 
+                </Input>
+            </Header>
+
             <main>
             <header>
                 <h1>Meus Filmes</h1>
@@ -20,10 +47,17 @@ export function Home(){
             </NewMovie>
             </header>
 
-            <NewNote></NewNote>
-            <NewNote></NewNote>
-            <NewNote></NewNote>
-            
+            {   
+                notes.map((note) => {  
+                    <Movie
+                        data={note.id}
+                        key={String(note.id)}
+                        description={note.description}
+                        onClick={()=> handleDetails(note.id)}>
+                    </Movie>
+                })
+            }
+
             </main>
         </Container>
     )

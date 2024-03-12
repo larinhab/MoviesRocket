@@ -5,32 +5,34 @@ import { useAuth } from '../../hooks/auth.jsx';
 import { Input } from "../Input/index.jsx";
 import { FiSearch } from "react-icons/fi";
 import { api } from '../../service/api.js';
+import { useEffect, useState } from 'react'
 
-export function Header(){
+export function Header({ children }){
     const { signOut, user } = useAuth()
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder
+
 
     return(
         <Container>
             <h1>RocketMovies</h1>
             
             <Search>
-                <Input placeholder="Pesquisar pelo título" icon={FiSearch}></Input>
+                { children }
             </Search>
 
             <Profile to="/profile">
                 <img
-                src={avatarURL}
+                src={ avatarURL }
                 alt="Foto do Usuário" />
 
                 <div>
                     <span>Bem Vindo,</span>
-                    <strong>Lara Viana</strong>
+                    <strong>{user.name}</strong>
                 </div>
             </Profile>
 
-            <Logout onClick={signOut}>
+            <Logout onClick={ signOut }>
                 <RiShutDownLine></RiShutDownLine>
             </Logout>
         </Container>

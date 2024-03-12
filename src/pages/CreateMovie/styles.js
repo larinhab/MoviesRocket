@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 150vh;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     
@@ -14,7 +14,7 @@ export const Container = styled.div`
         flex-direction: column;
 
         padding-right: 1rem;
-        overflow-y: scroll;
+       // overflow-y: scroll;
     
         h1 {
             font-weight: 400;
