@@ -18,8 +18,12 @@ export function Home(){
     useEffect(() => {
         async function searchNotes(){
             const response = await api.get(`/notes?movie_title=${search}`)
-            setNotes(response.data)
+            setNotes(notes)
+            console.log(response.data)
         }
+
+        console.log(notes)
+        console.log(search)
         searchNotes()
 
     }, [ search ])
@@ -50,7 +54,7 @@ export function Home(){
             {   
                 notes.map((note) => {  
                     <Movie
-                        data={note.id}
+                        data={note}
                         key={String(note.id)}
                         description={note.description}
                         onClick={()=> handleDetails(note.id)}>
