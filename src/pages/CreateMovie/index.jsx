@@ -5,15 +5,61 @@ import { Section } from "../../components/Section";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input";
+import { Stars } from "../../components/Stars";
+import { useNavigate } from "react-router-dom";
 import { Tags } from "../../components/Tags";
+import { api } from "../../service/api";
 import { Container} from "./styles";
 import { useState } from "react";
-import { Stars } from "../../components/Stars";
-
 
 export function CreateMovie() {
+    const navigate = useNavigate()
+
+    const [ movie_title, setTitle ] = useState("")
+    const [ movie_description, setDescription ] = useState("")
+
     const [ tags, setTags] = useState([])
     const [ newTag, setNewTag] = useState("")
+
+    const [ movie_note, setStars ] = useState([])
+    const [ rating, setRating] = useState("")
+    
+    async function handleNewMovieNote(){
+        if(!setTitle){
+            return alert("Você deixou o título vazio!")
+        }
+
+        if(!setDescription){
+            return alert("Você deixou a descrição do filme vazia!")
+        }
+
+        if(!setRating, !setStars){
+            return alert("Você precisa dar uma nota de 0 à 5")
+        }
+
+        if(!newTag){
+            return alert("Você deixou um campo de marcador vazio!")
+        }
+
+        await api.post("/notes", {
+            movie_title,
+            movie_description,
+            movie_note,
+            tags// NÃO ESTA PASSANDO NO BACK END, RESOLVER
+        }),
+
+        console.log(movie_note)
+
+        await api.post("/tags", {
+            tags,
+            tag_name,
+            note_id,
+            user_id,
+        }),
+
+        alert("Nota criada com sucesso", 200)
+        navigate("/")
+    }
 
     function handleAddTags(){
         setTags(prevState => [...prevState, newTag])
@@ -23,9 +69,6 @@ export function CreateMovie() {
     function handleRemoveTag(deleted){
         setTags(prevState => prevState.filter(tag => tag !== deleted))
     }
-
-    const [ stars, setStars ] = useState([])
-    const [ rating, setRating] = useState("")
     
     function handleRating(){
         setRating(prevState => [...prevState, setStars])    
@@ -47,12 +90,13 @@ export function CreateMovie() {
 
                 <Input 
                 type="text" 
-                title="título"
-                placeholder="Título"/>
+                title="movie_title"
+                placeholder="Título"
+                onChange={(e) => setTitle(e.target.value)} />
 
                 <Input 
                 type="number" 
-                title="rating" 
+                title="movie_note" 
                 placeholder="Sua nota (de 0 à 5)"
                 minLength="0"
                 maxLength="5"
@@ -62,19 +106,19 @@ export function CreateMovie() {
                 </Input>
 
                 <Stars
-                rating 
+                rating = { setRating }// AQUI NÃO FUNCIONA SÓ COLOCANDO NUMERO
                 isbigsize
-                onChange = {(e) => setStars(e.taget.value)}
+                onChange = {(e) => setStars(e.taget.value)} 
                 onClick={ handleRating }>
                 </Stars>
-                
-                
             
             </div>
 
                 <TextArea 
-                title="Obs"
-                placeholder="Observações"></TextArea>
+                title="movie_description"
+                placeholder="Observações"
+                onChange={(e) => setDescription(e.target.value)}>
+                </TextArea>
 
             <Section>
                 <h2>Marcadores</h2>
@@ -89,7 +133,7 @@ export function CreateMovie() {
             ></MovieItem>
             ))
         }
-            
+
             <MovieItem
             isnew
             placeholder="Novo Marcador"
@@ -105,8 +149,12 @@ export function CreateMovie() {
 
 
         <footer>
-            <Button title='Excluir filme'></Button>
-            <Button title='Salvar alterações'></Button>
+            <Button 
+            title='Excluir filme'>
+            </Button>
+            <Button title='Salvar alterações'
+            onClick={ handleNewMovieNote }>
+            </Button>
         </footer>
 
             </form>
