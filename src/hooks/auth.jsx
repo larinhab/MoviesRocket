@@ -15,7 +15,7 @@ function AuthProvider({ children }){
             localStorage.setItem("@rocketmovies:user", JSON.stringify(user))
             localStorage.setItem("@rocketmovies:token", token)
 
-            pi.defaults.headers.common["Authorization"] = `Bearer ${token}`
+            api.defaults.headers.common["Authorization"] = `Bearer ${token}`
             setData({ user, token })
 
         }catch(error){
