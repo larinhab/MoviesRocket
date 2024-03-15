@@ -3,6 +3,7 @@ import { Header } from '../../components/Header'
 import { Movie } from '../../components/Movie'
 import { Input } from '../../components/Input'
 import { Container, NewMovie } from './styles'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { api } from '../../service/api'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -11,6 +12,8 @@ export function Home(){
     const [ notes, setNotes ] = useState([]) 
     const [ search, setSearch ] = useState("")
 
+    const navigate = useNavigate()
+
     function handleDetails(id) {
         navigate(`/preview/${id}`);
       }
@@ -18,12 +21,10 @@ export function Home(){
     useEffect(() => {
         async function searchNotes(){
             const response = await api.get(`/notes?movie_title=${search}`)
-            setNotes(notes)
-            console.log(response.data)
+            setNotes(response.data)
+
         }
 
-        console.log(notes)
-        console.log(search)
         searchNotes()
 
     }, [ search ])
@@ -52,14 +53,14 @@ export function Home(){
             </header>
 
             {   
-                notes.map((note) => {  
+                notes.map((note) =>
                     <Movie
                         data={note}
                         key={String(note.id)}
                         description={note.description}
-                        onClick={()=> handleDetails(note.id)}>
-                    </Movie>
-                })
+                        onClick={()=> handleDetails(note.id)}/>
+
+                )
             }
 
             </main>
