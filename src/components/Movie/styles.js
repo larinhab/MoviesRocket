@@ -22,13 +22,20 @@ export const Container = styled.button`
         margin-left: .5rem;
     }  
 
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    
+    }
 
-  > h1 {
+  > div > h1 {
     flex: 1;
     text-align: left;
-    font-size: 2.4rem;
+    align-items: center;
+    font-size: 2.5rem;
     color: ${({ theme }) => theme.COLORS.WHITE};
-    margin-bottom: 0.8rem;
   }
 
   > p {

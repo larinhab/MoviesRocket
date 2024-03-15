@@ -3,28 +3,33 @@ import { Stars } from '../Stars'
 import { Tags } from '../Tags'
 
 export function Movie({ data, ...rest}){
+    // console.log(data)
     return(
         <Container {...rest}>
-            <h1>{data.title}</h1>
+            <div>
+
+            <h1>{data.movie_title}</h1>
             
             <Stars
-            rating= {data.rating }
+            rating= { data.rating }
             isbigsize={true}
             ></Stars>
+            </div>
 
-            <p> {data.description} </p>
+            <p> {data.movie_description} </p>
 
 
             {
-                data.tag && (
+                data.tags && (
                 <footer>
                 
-                {data.tags.map((tag)=> (
-                    <Tag
+                {
+                    data.tags.map((tag)=> (
+                    <Tags
                     key= { tag.id }
-                    title= { tag.tag_name }>
-                    </Tag>
-                ))}
+                    title= { tag.tag_name }/>
+                ))
+                }
                 
                 </footer>   
                 )
