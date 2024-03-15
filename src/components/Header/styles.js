@@ -22,6 +22,7 @@ export const Container = styled.header`
     > h1 {
         width: 100%;
         color:  ${({ theme }) => theme.COLORS.PINK};
+        cursor: pointer;
     }
 
 `

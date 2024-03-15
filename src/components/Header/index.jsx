@@ -6,16 +6,25 @@ import { Input } from "../Input/index.jsx";
 import { FiSearch } from "react-icons/fi";
 import { api } from '../../service/api.js';
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export function Header({ children }){
     const { signOut, user } = useAuth()
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder
 
+    const navigate = useNavigate()
+
+    function handleBack(){
+        navigate("/")
+    }
 
     return(
         <Container>
-            <h1>RocketMovies</h1>
+            <h1
+            onClick={ handleBack }>
+                RocketMovies
+            </h1>
             
             <Search>
                 { children }
