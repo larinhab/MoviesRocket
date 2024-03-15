@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
-    margin: 0 auto;
+    margin: auto;
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
     > main {
@@ -17,6 +17,7 @@ export const Container = styled.div`
         header {
             display: flex;
             flex-direction: column;
+            margin-bottom: -2rem;
         }
 
         div:nth-child(1) { 
@@ -61,10 +62,6 @@ export const Container = styled.div`
             margin-right: -1.2rem;
         }
 
-        section {
-            margin: 2.5rem 0;
-        }
-
         p:last-child{
             width: 100%;
             font-family: 'Roboto';
@@ -81,6 +78,7 @@ export const Container = styled.div`
             -webkit-overflow-scrolling: touch;
             padding-right: 1rem;
         }
+
 }
 
 
