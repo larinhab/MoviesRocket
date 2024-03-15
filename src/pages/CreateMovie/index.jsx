@@ -45,11 +45,13 @@ export function CreateMovie() {
             return alert("Você deixou um campo de marcador vazio!")
         }
 
+        //console.log(tags)
+
         await api.post("/notes", {
             movie_title,
             movie_description,
             rating,
-            tags 
+            tags
         }),
 
         alert("Nota criada com sucesso", 200)
