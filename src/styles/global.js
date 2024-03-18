@@ -14,14 +14,29 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    body, input, button, textarea {
+    body {
         font-family: 'Protest Riot', 'Roboto', sans-serif;
         font-size: 16px;
         outline: none;
     }
 
-    a {
+    input, button, textarea {
+        font-family:  'Roboto', sans-serif;
+        font-size: 16px;
+        outline: none;
+    }
+
+    h1 {
+        font-family: 'Protest Riot';
+    }
+
+    h2, h3 {
+        font-family: "Madimi One", sans-serif;
+    }
+
+    a, p {
         text-decoration: none;
+        font-family: "Madimi One", sans-serif;
     }
 
     button, a {
