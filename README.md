@@ -20,7 +20,7 @@ Its the front-end of the web aplication that you can log in, create account, add
 </p>
 
 <p align="center">
-  <img alt="Register" src="./src/assets/signup2.png" width="100%">
+  <img alt="Movie Details" src="./src/assets/details2.png" width="100%">
 </p>
 
 <p align="center">
@@ -28,11 +28,12 @@ Its the front-end of the web aplication that you can log in, create account, add
 </p>
 
 <p align="center">
-  <img alt="Movie Details" src="./src/assets/details2.png" width="100%">
+  <img alt="Register" src="./src/assets/signup2.png" width="100%">
 </p>
 
+
 <p align="center">
-  <img alt="Profile" src="./src/assets/profile2.png" width="100%">
+  <img alt="Profile" src="./src/assets/profil2e.png" width="100%">
 </p>
 
 ## 🚀 Techs / Tecnologias
