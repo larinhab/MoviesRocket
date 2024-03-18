@@ -5,12 +5,14 @@ import {SignUp} from '../pages/SignUp'
 
 
 export function AuthRoutes(){
+    const user = localStorage.getItem("@rocketmovies:user")
+
     return(
         <Routes>
             <Route path="/" element={<SignIn></SignIn>}></Route>
             <Route path="/register" element={<SignUp></SignUp>}></Route>
 
-            <Route path="*" element={<Navigate to="/"></Navigate>} ></Route> 
+            { !user && <Route path="*" element={<Navigate to="/"></Navigate>} ></Route> } 
         
         </Routes>
     )
