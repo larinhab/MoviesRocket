@@ -12,27 +12,27 @@ Its the front-end of the web aplication that you can log in, create account, add
 
 
 <p align="center">
-  <img alt="Home" src="./src/assets/home.png" width="100%">
+  <img alt="Home" src="./src/assets/home2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="LogIn" src="./src/assets/signin.png" width="100%">
+  <img alt="LogIn" src="./src/assets/signin2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Register" src="./src/assets/signup.png" width="100%">
+  <img alt="Register" src="./src/assets/signup2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="New movie note" src="./src/assets/newmovie.png" width="100%">
+  <img alt="New movie note" src="./src/assets/newmovie2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Movie Details" src="./src/assets/details.png" width="100%">
+  <img alt="Movie Details" src="./src/assets/details2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Profile" src="./src/assets/profile.png" width="100%">
+  <img alt="Profile" src="./src/assets/profile2.png" width="100%">
 </p>
 
 ## 🚀 Techs / Tecnologias
