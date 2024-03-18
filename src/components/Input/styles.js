@@ -27,7 +27,7 @@ export const Container = styled.div`
         font-family: 'Roboto';
 
         &::placeholder {
-            color: ${({ theme }) => theme.COLORS.GRAY_300};
+            color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
         }
     }
 

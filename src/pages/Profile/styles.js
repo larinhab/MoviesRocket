@@ -30,7 +30,11 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
     max-width: 340px;
     margin: 30px auto 0;
 

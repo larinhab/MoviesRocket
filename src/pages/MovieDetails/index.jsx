@@ -1,35 +1,32 @@
 import { ButtonBack } from "../../components/ButtonBack";
+import { useNavigate, useParams } from "react-router-dom"; //busca os parametros buscados na rota
+import avatarPlaceholder from '../../assets/user.svg'
 import { Section } from "../../components/Section"
 import { Header } from "../../components/Header";
 import { Button } from '../../components/Button'
 import { Stars } from "../../components/Stars";
-import { Movie } from "../../components/Movie";
 import CustomScroll from "react-custom-scroll";
 import { Tags } from "../../components/Tags";
-import { useNavigate, useParams } from "react-router-dom"; //busca os parametros buscados na rota
 import { useState, useEffect } from "react";
+import { useAuth } from "../../hooks/auth";
 import { FiClock } from "react-icons/fi";
 import { api } from "../../service/api";
 import { Container } from "./styles";
-import moment from 'moment-timezone'
-
-// const ActualDate = moment
-//.utc(data_updated_at)
-//.tz("Brasilia")
-// .format("DD/MM/YYYY HH:mm:ss")
-
 
 export function MovieDetails() {
     const [ data, setData ] = useState(null)
     const params = useParams()
     const navigate = useNavigate()
+    const { user } = useAuth()
+
+    const avatar = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
     async function handleRemove(){
         const confirm = window.confirm("Deseja realmente remover a nota deste filme?")
 
         if(confirm){
             await api.delete(`notes/${params.id}`)
-            navigate("/")
+            navigate(-1)
         }
     }
     
@@ -47,10 +44,10 @@ export function MovieDetails() {
             <Header></Header>
             
 
+            <ButtonBack></ButtonBack>
         { // ENVOLVO POR CHAVES PARA MOSTRAR O MAIN SOMENTE SE EXISTIR CONTEUDO
             data &&  // SE TEM CONTEUDO MOSTRA OS DADOS SE NÃO NADA
             <main>
-                <ButtonBack></ButtonBack>
 
             <header>
              <div>
@@ -62,9 +59,9 @@ export function MovieDetails() {
 
             <div className="subtitle">
             <div className="author">  
-                <img src="https://www.github.com/larinhab.png" alt="Nome do Usuário" />
+                <img src= {avatar} alt={user.name} />
                 <p>
-                    
+                   {user.name} 
                 </p>
             </div>
 

@@ -72,10 +72,10 @@ export function CreateMovie() {
         <Container>
             <Header></Header>
 
+            <ButtonBack></ButtonBack>
         <main>
             <form>
 
-            <ButtonBack></ButtonBack>
             <h1>Novo Filme</h1>   
 
             <div className="movie-info">
@@ -108,7 +108,7 @@ export function CreateMovie() {
 
                 <TextArea 
                 title="movie_description"
-                placeholder="Observações sobre o filme"
+                placeholder="Conta aqui o que achou do filme!"
                 onChange={(e) => setDescription(e.target.value)}>
                 </TextArea>
 
@@ -127,7 +127,7 @@ export function CreateMovie() {
 
             <MovieItem
             isnew
-            placeholder="Novo Marcador"
+            placeholder="Adicione uma tag"
             value={ newTag }
             onChange={(e) => setNewTag(e.target.value)}
             onClick={ handleAddTags }
@@ -138,12 +138,9 @@ export function CreateMovie() {
             </Section>
                 
 
-
         <footer>
             <Button 
-            title='Excluir filme'>
-            </Button>
-            <Button title='Salvar alterações'
+            title='Salvar'
             onClick={ handleNewMovieNote }>
             </Button>
         </footer>

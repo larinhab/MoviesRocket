@@ -11,6 +11,7 @@ export const Container = styled.span`
     color: ${({theme }) => theme.COLORS.WHITE};
 
     cursor: pointer;
+    font-family: "Madimi One", sans-serif;
     letter-spacing: 1px;
     
     font-weight: 400;

@@ -3,7 +3,7 @@ import { Header } from '../../components/Header'
 import { Movie } from '../../components/Movie'
 import { Input } from '../../components/Input'
 import { Container, NewMovie } from './styles'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { api } from '../../service/api'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -15,7 +15,7 @@ export function Home(){
     const navigate = useNavigate()
 
     function handleDetails(id) {
-        navigate(`/preview/${id}`);
+        navigate(`/moviedetails/${id}`);
       }
  
     useEffect(() => {

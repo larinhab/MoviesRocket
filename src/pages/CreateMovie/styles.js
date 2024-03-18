@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 100%;
-    height: 150vh;
+    height: 100vh;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     
@@ -24,10 +24,11 @@ export const Container = styled.div`
 
     .movie-info{
         width: 100%;
+        
         display: flex;
         justify-content: space-between;
-        gap: 2.5rem;
         align-items: center;
+        gap: 2.5rem;
 
         margin-bottom: 2rem;
     }
@@ -45,22 +46,16 @@ export const Container = styled.div`
 
         flex: 1;
 
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
         border-radius: .5rem;
     }
 
     footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         gap: 2.5rem;
-        width: 100%;
     }
-
-    footer button:nth-child(1) {
-      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-      color: ${({ theme }) => theme.COLORS.PINK};
-    }
-
 
     ::-webkit-scrollbar {
         width: .5rem;

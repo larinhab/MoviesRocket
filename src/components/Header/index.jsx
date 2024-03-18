@@ -2,11 +2,11 @@ import { Container, Profile, Logout, Search } from './styles.js'
 import avatarPlaceHolder  from '../../assets/user.svg'
 import { RiShutDownLine } from 'react-icons/ri'
 import { useAuth } from '../../hooks/auth.jsx';
+import { useNavigate } from 'react-router-dom';
 import { Input } from "../Input/index.jsx";
 import { FiSearch } from "react-icons/fi";
 import { api } from '../../service/api.js';
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 
 export function Header({ children }){
     const { signOut, user } = useAuth()

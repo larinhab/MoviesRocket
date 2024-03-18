@@ -1,6 +1,5 @@
-import background from '../../assets/movie.png'
 import bg from '../../assets/bg.jpg'
-import styled from "styled-components";
+import styled from "styled-components"
 
 
 export const Container = styled.div`
@@ -27,7 +26,7 @@ export const Form = styled.form`
     }
 
     >h2 {
-        font-family: 'Roboto';
+        font-weight: normal;
         font-size: 24px; 
         margin: 48px 0;
     }
@@ -39,13 +38,15 @@ export const Form = styled.form`
 
     > a {
         margin-top: 48px;
-        font-size: 18px;
+        font-size: 20px;
         color: ${({ theme }) => theme.COLORS.PINK};
     }
 
     > svg {
+        color: ${({ theme }) => theme.COLORS.PINK};
         font-size: 24px;
     }
+
 `
 
 export const Background = styled.div`

@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+    width: 15rem;
     background-color: ${({ theme }) => theme.COLORS.PINK};
     color: ${({ theme }) => theme.COLORS.WHITE};
 
@@ -11,8 +16,7 @@ export const Container = styled.button`
     margin-top: 16px;
     border-radius: 10px;
 
-    font-family: 'Roboto';
-    font-weight: bold;
+    letter-spacing: 1px;
 
     &:disabled {
         opacity: 0.5;

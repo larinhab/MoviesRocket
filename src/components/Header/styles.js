@@ -23,7 +23,9 @@ export const Container = styled.header`
         width: 100%;
         color:  ${({ theme }) => theme.COLORS.PINK};
         cursor: pointer;
+        letter-spacing: 1.6px;
     }
+    
 
 `
 
@@ -63,8 +65,8 @@ export const Profile = styled(Link)`
         }
 
         strong {
-            font-family: 'Roboto';
-            font-size: 1.125rem;
+            font-size: 1.5em;
+            font-weight: normal;
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }

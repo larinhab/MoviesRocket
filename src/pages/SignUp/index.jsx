@@ -28,7 +28,6 @@ function handleSignUp(){
         })
         .catch(error => {
             if(error.message){
-                console.log("b")
                 alert(error.message)
             }else{
                 alert("Não foi possível cadastrar")
@@ -66,7 +65,8 @@ function handleSignUp(){
             <Button title="Cadastrar" onClick={handleSignUp}></Button>
         
             <Link to="/">
-                <FiArrowLeft></FiArrowLeft>Voltar para o login</Link>
+                Voltar para o login</Link>
+                <FiArrowLeft></FiArrowLeft>
             </Form>
             
         </Container>

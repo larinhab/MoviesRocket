@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import background from '../../assets/movie.png'
+import styled from "styled-components"
 import bg from '../../assets/bg.jpg'
 
 export const Container = styled.div`
@@ -32,7 +31,7 @@ export const Form = styled.form`
     }
 
     > p {
-        font-family: 'Roboto';
+        font-family: "Madimi One", sans-serif;
         font-size: 14px;
         color: ${({ theme }) => theme.COLORS.GRAY_100};
     }

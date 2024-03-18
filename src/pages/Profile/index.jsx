@@ -3,8 +3,8 @@ import { ButtonBack } from '../../components/ButtonBack'
 import avatarPlaceHolder  from '../../assets/user.svg'
 import { Container, Form, Avatar } from './styles'
 import { Button } from '../../components/Button'
-import { Input } from '../../components/Input'
 import { useNavigate } from "react-router-dom"
+import { Input } from '../../components/Input'
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../service/api'
 import { useState } from "react"
@@ -24,13 +24,17 @@ export function Profile() {
     const navigate = useNavigate()
 
     async function handleUptade(){
-        const user = { 
+        const uptadeUser = { 
             name, 
             email,
             password: passwordNew,
             old_password: passowordOld
         }
-        await uptadeProfile({ user, avatarFile })
+
+        const userUpdated = Object.assign( user, uptadeUser)
+        console.log(userUpdated)
+
+        await uptadeProfile({ user: uptadeUser, avatarFile })
             
         navigate("/")
     }

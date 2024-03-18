@@ -36,9 +36,9 @@ export function SignIn(){
                 onChange={e => setPassword(e.target.value)}>
                 </Input>
 
-            <Button title="ENTRAR" onClick={ handleSignIn }></Button>
+                <Button title="Entrar" onClick={ handleSignIn }></Button>
         
-                <Link to="/register">Criar Conta</Link>
+                <Link to="/register">Criar conta</Link>
         
             </Form>
             
