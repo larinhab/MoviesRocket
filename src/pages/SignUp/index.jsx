@@ -1,11 +1,9 @@
-import { FiUser, FiMail, FiLock, FiArrowDownLeft, FiArrowLeft} from 'react-icons/fi'
-import { Container, Form, Background } from "./style";
+import { FiUser, FiMail, FiLock, FiArrowLeft} from 'react-icons/fi'
+import { Container, Form, Background } from "./style.js";
 import { Link, useNavigate } from "react-router-dom"
 import { Button } from '../../components/Button'
 import { Input } from "../../components/Input";
-
-import { api } from '../../service/api'
-
+import { api } from '../../service/api.js'
 import { useState } from 'react'
 
 export function SignUp(){

@@ -1,4 +1,4 @@
-import { Container } from './style';
+import { Container } from './style.js';
 
 export function TextArea({ value, ...rest}) {
     return(

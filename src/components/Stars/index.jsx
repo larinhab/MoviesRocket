@@ -1,5 +1,5 @@
 import { VscStarFull, VscStarEmpty } from "react-icons/vsc";
-import { Container } from "./styles";
+import { Container } from "./styles.js";
 
 export function Stars({ rating, isbigsize }) {
   let stars = [];

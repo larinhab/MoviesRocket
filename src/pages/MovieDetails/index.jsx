@@ -6,12 +6,12 @@ import { Header } from "../../components/Header";
 import { Button } from '../../components/Button'
 import { Stars } from "../../components/Stars";
 import CustomScroll from "react-custom-scroll";
+import { useAuth } from "../../hooks/auth.jsx";
 import { Tags } from "../../components/Tags";
 import { useState, useEffect } from "react";
-import { useAuth } from "../../hooks/auth";
 import { FiClock } from "react-icons/fi";
-import { api } from "../../service/api";
-import { Container } from "./styles";
+import { api } from "../../service/api.js";
+import { Container } from "./styles.js";
 
 export function MovieDetails() {
     const [ data, setData ] = useState(null)

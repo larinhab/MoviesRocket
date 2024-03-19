@@ -1,5 +1,5 @@
 import { FiPlus, FiX } from "react-icons/fi";
-import { Container } from "./styles";
+import { Container } from "./styles.js";
 
 export function MovieItem({ isnew, value, onClick, ...rest }) {
   return (

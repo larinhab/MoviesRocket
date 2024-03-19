@@ -8,8 +8,8 @@ import { Input } from "../../components/Input";
 import { Stars } from "../../components/Stars";
 import { useNavigate } from "react-router-dom";
 import { Tags } from "../../components/Tags";
-import { api } from "../../service/api";
-import { Container} from "./styles";
+import { api } from "../../service/api.js";
+import { Container} from "./styles.js";
 import { useState } from "react";
 
 export function CreateMovie() {

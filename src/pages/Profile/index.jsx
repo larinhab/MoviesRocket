@@ -1,12 +1,12 @@
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
 import { ButtonBack } from '../../components/ButtonBack'
 import avatarPlaceHolder  from '../../assets/user.svg'
-import { Container, Form, Avatar } from './styles'
+import { Container, Form, Avatar } from './styles.js'
 import { Button } from '../../components/Button'
 import { useNavigate } from "react-router-dom"
 import { Input } from '../../components/Input'
-import { useAuth } from '../../hooks/auth'
-import { api } from '../../service/api'
+import { useAuth } from '../../hooks/auth.jsx'
+import { api } from '../../service/api.js'
 import { useState } from "react"
 
 export function Profile() {
