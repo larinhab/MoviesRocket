@@ -98,7 +98,7 @@ export function CreateMovie() {
                 </Input>
 
                 <Stars
-                rating = { rating }// AQUI NÃO FUNCIONA SÓ COLOCANDO NUMERO
+                rating = { rating }
                 isbigsize
                 onChange = {(e) => setRating(e.taget.value)} 
                 >
