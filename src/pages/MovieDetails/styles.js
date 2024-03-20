@@ -55,8 +55,8 @@ export const Container = styled.div`
         }
 
         .author img{
-            width: 1.6rem;
-            height: 1.6rem;
+            width: 2rem;
+            height: 2rem;
             border-radius: 50%;
             margin-right: -1.2rem;
         }

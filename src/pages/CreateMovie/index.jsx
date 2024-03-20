@@ -45,6 +45,13 @@ export function CreateMovie() {
             return alert("Você deixou um campo de marcador vazio!")
         }
 
+        if(newTag){
+            return alert("Existe um campo não preenchido!")
+        }
+        
+        if (tags.length <= 0) {
+            return alert("Adicione pelo menos um marcador");
+          }
         //console.log(tags)
 
         await api.post("/notes", {

@@ -49,7 +49,7 @@ function handleSignUp(){
                 </Input>
 
                 <Input placeholder="Email"
-                type="text"
+                type="email"
                 icon={FiMail}
                 onChange={e => setEmail(e.target.value)}>
                 </Input>

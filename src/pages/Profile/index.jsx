@@ -31,8 +31,11 @@ export function Profile() {
             old_password: passowordOld
         }
 
+        if(!passowordOld && !passwordNew){
+            alert("Você precisa alterar sua senha para salvar!")
+        }
+
         const userUpdated = Object.assign( user, uptadeUser)
-        console.log(userUpdated)
 
         await uptadeProfile({ user: uptadeUser, avatarFile })
             
