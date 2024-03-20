@@ -41,14 +41,14 @@ export function CreateMovie() {
             return alert("A nota deve ser entre 0 e 5")
         }
 
-        if(!newTag){
+       // if(!newTag){
+       //     return alert("Você deixou um campo de marcador vazio!")
+       // }
+
+        if(newTag){
             return alert("Você deixou um campo de marcador vazio!")
         }
 
-        if(newTag){
-            return alert("Existe um campo não preenchido!")
-        }
-        
         if (tags.length <= 0) {
             return alert("Adicione pelo menos um marcador");
           }
